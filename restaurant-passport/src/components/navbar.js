@@ -11,7 +11,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
+  NavbarText,
+  Button
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -19,6 +20,11 @@ const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    const logOut = () => {
+        localStorage.clear();
+        window.location.href = '/';
+    }
 
     return(
         <div>
@@ -33,23 +39,23 @@ const NavBar = () => {
                 </DropdownToggle>
                 <DropdownMenu right>
                     <DropdownItem>
-                        <Link to='/'> Profile
+                        <Link to='/profile'> Profile </Link>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    Dashboard
+                        <Link to='/dashboard'>Dashboard</Link>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    Passport
+                        <Link to='/passport'>Passport</Link>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    Settings
+                        <Link to='/settings'>Settings</Link>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    Log Out
+                    <Button color="danger" onClick={logOut}>Log Out</Button>{' '}
                     </DropdownItem>
                 </DropdownMenu>
                 </UncontrolledDropdown>

@@ -10,6 +10,8 @@ import LogIn from './components/log_reg/login';
 import Register from './components/log_reg/register';
 import Dashboard from './components/menu/dashboard/dashboard';
 import Profile from './components/menu/profile/profile';
+import Passport from './components/menu/passport/passport';
+import Settings from './components/menu/settings';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token')? true: false);
@@ -28,6 +30,8 @@ function App() {
           <Route path = "/register" component = {Register} />
           <PrivateRoute path = "/dashboard" component = {Dashboard} />
           <Route path = "/profile" component = {Profile} />
+          <Route path = "/passport" component = {Passport} />
+          <Route path = "/settings" component = {Settings} />
         </Switch>
       </FoodieContext.Provider>
     </main>

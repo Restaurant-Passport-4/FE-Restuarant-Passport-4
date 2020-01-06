@@ -10,6 +10,8 @@ const Dashboard = () => {
     return(
         <>
          <NavBar />
+         <h1>{user.message}</h1>
+         <h2>Here are some suggested restaurants:</h2>
          <SuggestionList />
         </>
 

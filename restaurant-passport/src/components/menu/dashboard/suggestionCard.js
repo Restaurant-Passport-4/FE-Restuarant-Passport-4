@@ -1,27 +1,25 @@
 import React from 'react';
-import NavBar from '../../navBar';
 import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
   } from 'reactstrap';
 
-const SuggestionCard = () => {
-    
+const SuggestionCard = (props) => {
+    const { id, name, city, address } = props;
     return (
-        <div>
+        
         <Card>
           <CardBody>
-            <CardTitle>Restaurant title</CardTitle>
-            <CardSubtitle>Restaurant subtitle</CardSubtitle>
+            <CardTitle>{name}</CardTitle>
+            <CardSubtitle>{city}</CardSubtitle>
           </CardBody>
-          <img width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+          <img width="100%" src="" alt="restaurant picture" />
           <CardBody>
-            <CardText>Description Text (optional)</CardText>
+            <CardText>{address}</CardText>
             <CardLink href="#">Card Link</CardLink>
-            <CardLink href="#">Another Link</CardLink>
           </CardBody>
         </Card>
-      </div>
+      
     );
 };
 
