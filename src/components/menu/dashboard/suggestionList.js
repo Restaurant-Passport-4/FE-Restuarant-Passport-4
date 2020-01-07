@@ -3,7 +3,7 @@ import SuggestionCard from './suggestionCard';
 import styled from 'styled-components';
 import { FoodieContext } from '../../../contexts/foodiecontext';
 import axiosWithAuth from '../../../components/axiosWithAuth';
-import { Spinner } from 'reactstrap';
+import { Spinner, Container, Row, Col } from 'reactstrap';
 
 const SuggestionList = () => {
     const {restaurants, setRestaurants} = useContext(FoodieContext);
@@ -27,8 +27,9 @@ const SuggestionList = () => {
     }, [])
     if (!restaurants) return <div><Spinner type="grow" color="primary" /></div>;
     return(
-        <CardCont>
-            {restaurants.map(restaurant =>(
+       
+        {restaurants.map(restaurant =>(
+            <Container className="themed-container" fluid={true}>
                 <SuggestionCard
                 id={restaurant.id}
                 name={restaurant.name}
@@ -36,15 +37,14 @@ const SuggestionList = () => {
                 address={restaurant.address}
                 addToPassport={addToPassport}
                 />
-            ))}
-        </CardCont>
+            </Container>
+        ))}
+        
     );
 };
 
 export default SuggestionList;
 
-const CardCont = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`;
+// const CardBackground = styled.div`
+//   background: #ECE6DC;
+// `;

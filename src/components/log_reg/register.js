@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import axiosWithAuth from '../axiosWithAuth';
+import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { FoodieContext } from '../../contexts/foodiecontext';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
@@ -27,15 +28,15 @@ const Register = () => {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('user', JSON.stringify(res.data.username))
                 setUser(JSON.parse(localStorage.getItem('user')))
-                history.push('/dashboard')
+                history.push('/')
             })
             .catch(err => console.error(err))
             }
         }
 
     return (
-        <div>
-            <h1>Register your new account:</h1>
+        <FormContainer>
+            <H1>Register your new account:</H1>
             <Form onSubmit={onSubmit}>
                 <FormGroup>
                     <Label for="username">Username</Label>
@@ -57,12 +58,34 @@ const Register = () => {
                     <Label for="city">City</Label>
                     <Input type="text" name="city" id="city" placeholder="City" onChange={handleChanges} />
                 </FormGroup>
-                <Button type="submit">Sign Up</Button>
+                <BtnContainer>
+                    <Button type="submit">Sign Up</Button>
+                    <Link to ='/'>Returning User? Sign in</Link>
+                </BtnContainer>
             </Form>
-            <Link to ='/'>Returning User? Sign in</Link>
-        </div>
+            
+        </FormContainer>
     )
 
 }
 
 export default Register;
+
+const H1 = styled.h1`
+    text-align: center;
+    margin: 15px;
+`;
+
+const FormContainer = styled.div`
+    width: 60%;
+    margin: 0 auto;
+`;
+
+const BtnContainer = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+`;
