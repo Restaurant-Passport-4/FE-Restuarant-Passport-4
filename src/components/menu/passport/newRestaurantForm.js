@@ -24,9 +24,9 @@ const NewRestaurantForm = () => {
     
     return(
         <div>
-            <h1>Add A Restaurant</h1>
+            <h1>Add A New Restaurant</h1>
             <Form>
-                <FormGroup>
+                <FormGroup onSubmit={submitEffect}>
                     <Label for='name'>Restuarant Name</Label>
                     <Input type='text'
                         name='name'
@@ -74,7 +74,16 @@ const NewRestaurantForm = () => {
                         placeholder='website'
                         onChange={changeHandler}/>
                 </FormGroup>
-               {/* Star Rating System */}
+                <FormGroup>
+                    <Label for="stars">Rating</Label>
+                    <Input type="select" name="stars" id="stars">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    </Input>
+                </FormGroup>
                <FormGroup>
                     <Label for='name'>Website</Label>
                     <Input type='textarea'

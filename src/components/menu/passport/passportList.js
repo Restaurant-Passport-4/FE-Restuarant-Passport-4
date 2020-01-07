@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import PassportCard from './passportCard';
+import AddRestaurant from './addRestaurant';
 import { FoodieContext } from '../../../contexts/foodiecontext';
 import axiosWithAuth from '../../../components/axiosWithAuth';
 import styled from 'styled-components';
@@ -18,16 +19,19 @@ const PassportList = () => {
     },[])
 
     return(
-        <PassCardCont>
-            {passport.map(restaurant => (
-                <PassportCard
-                id={restaurant.id}
-                name={restaurant.name}
-                city={restaurant.city}
-                address={restaurant.address}
-                />
-            ))}
+        <div>
+            <AddRestaurant />
+            <PassCardCont>
+                {passport.map(restaurant => (
+                    <PassportCard
+                    id={restaurant.id}
+                    name={restaurant.name}
+                    city={restaurant.city}
+                    address={restaurant.address}
+                    />
+                ))}
         </PassCardCont>
+        </div>
     );
 };
 

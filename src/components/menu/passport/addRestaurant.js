@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const AddRestaurant = () => {
     
 
     return(
         <div>
-            <img src='' alt='logo' />
-            <Button outline color="secondary">Add Restaurant</Button>{' '}
+            <Link to='/newRestaurant'>
+                <Button outline color="secondary">Add a New Restaurant</Button>{' '}
+            </Link>
         </div>
     );
 };
