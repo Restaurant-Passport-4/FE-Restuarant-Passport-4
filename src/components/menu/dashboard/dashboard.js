@@ -9,30 +9,34 @@ const Dashboard = () => {
     const { user } = useContext(FoodieContext);
     
     return(
-        <>
-        
+        <Background>
          <NavBar />
          <H1>{user.message}</H1>
          <H2>Here are some suggested restaurants:</H2>
-         <CardContainer>
+         <div>
             <SuggestionList />
-         </CardContainer>
-        </>
+         </div>
+        </Background>
 
     );
 };
 
 export default Dashboard;
 
-const CardContainer = styled.div`
-  width: 60%;
-  margin: 20px auto;
-  backgroundColor: #ECE6DC;
-  border-radius: 15px;
-  display: flex;
-    border: 2px solid red;
-    flex-direction: column;
-    align-items: space-around;
+// const CardContainer = styled.div`
+//     box-sizing: border-box;
+//     width: 60%;
+//     margin: 20px auto;
+//     background-color: #ECE6DC;
+//     border-radius: 15px;
+//     display: flex;
+//     border: 2px solid red;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+// `;
+const Background = styled.div`
+    background-color: #ECE6DC;
 `;
 
 const H1 = styled.h1`

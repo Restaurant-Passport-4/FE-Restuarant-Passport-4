@@ -25,26 +25,33 @@ const SuggestionList = () => {
         }
         getRestaurants();
     }, [])
-    if (!restaurants) return <div><Spinner type="grow" color="primary" /></div>;
+
     return(
-       
+        <CardContainer>
         {restaurants.map(restaurant =>(
-            <Container className="themed-container" fluid={true}>
-                <SuggestionCard
-                id={restaurant.id}
-                name={restaurant.name}
-                city={restaurant.city}
-                address={restaurant.address}
-                addToPassport={addToPassport}
-                />
-            </Container>
-        ))}
-        
+            <SuggestionCard
+            id={restaurant.id}
+            name={restaurant.name}
+            city={restaurant.city}
+            address={restaurant.address}
+            addToPassport={addToPassport}
+            />
+            ))}
+        </CardContainer>
     );
 };
 
 export default SuggestionList;
 
-// const CardBackground = styled.div`
-//   background: #ECE6DC;
-// `;
+const CardContainer = styled.div`
+    box-sizing: border-box;
+    width: 60%;
+    margin: 20px auto;
+    background-color: #ECE6DC;
+    border-radius: 15px;
+    display: flex;
+    border: 2px solid #8C2C2C;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+`;
