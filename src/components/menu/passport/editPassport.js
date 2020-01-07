@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axiosWithAuth from '../../axiosWithAuth';
 
-const NewRestaurantForm = () => {
+const EditPassport = props => {
     const [input, setInput] = useState({
         name: '',
         address: '',
@@ -14,28 +14,24 @@ const NewRestaurantForm = () => {
         notes: ''
     })
 
-   
-
-    const changeHandler = e => {
-        setInput({ ...input, [e.target.name]: e.target.value});
-    };
-
-    const submitEffect = e => {
-        e.preventDefault();
-        if(input.zip.legnth !== 5){
-            alert('Please enter a valid Zipcode!')
-        }
-        else{
-
+    const changeHandler = () => {
+        const changeHandler = e => {
+            setInput({ ...input, [e.target.name]: e.target.value});
         };
-    };
+    }
 
-    
-    return(
+    const onSubmit = e => {
+        e.preventDefault();
+        axiosWithAuth()
+            .put('/')
+            .catch(err => console.log(err))
+    }
+
+    return (
         <div>
-            <h1>Add A New Restaurant</h1>
+            <h1>Edit passport entry:</h1>
             <Form>
-                <FormGroup onSubmit={submitEffect}>
+                <FormGroup onSubmit={onSubmit}>
                     <Label for='name'>Restuarant Name</Label>
                     <Input type='text'
                         name='name'
@@ -93,7 +89,7 @@ const NewRestaurantForm = () => {
                     <option>5</option>
                     </Input>
                 </FormGroup>
-               <FormGroup>
+                <FormGroup>
                     <Label for='name'>Website</Label>
                     <Input type='textarea'
                         name='notes'
@@ -101,10 +97,10 @@ const NewRestaurantForm = () => {
                         placeholder=' Example Notes'
                         onChange={changeHandler}/>
                 </FormGroup>
-                <Button type='submit'>Submit</Button>
+                    <Button type='submit'>Submit</Button>
             </Form>
         </div>
-    );
-};
+    )
+}
 
-export default NewRestaurantForm;
+export default EditPassport;

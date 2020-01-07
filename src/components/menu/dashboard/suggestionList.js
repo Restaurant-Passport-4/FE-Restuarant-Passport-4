@@ -3,7 +3,7 @@ import SuggestionCard from './suggestionCard';
 import styled from 'styled-components';
 import { FoodieContext } from '../../../contexts/foodiecontext';
 import axiosWithAuth from '../../../components/axiosWithAuth';
-import { Spinner } from 'reactstrap';
+import { Spinner, Container, Row, Col } from 'reactstrap';
 
 const SuggestionList = () => {
     const {restaurants, setRestaurants} = useContext(FoodieContext);
@@ -25,26 +25,33 @@ const SuggestionList = () => {
         }
         getRestaurants();
     }, [])
-    if (!restaurants) return <div><Spinner type="grow" color="primary" /></div>;
+
     return(
-        <CardCont>
-            {restaurants.map(restaurant =>(
-                <SuggestionCard
-                id={restaurant.id}
-                name={restaurant.name}
-                city={restaurant.city}
-                address={restaurant.address}
-                addToPassport={addToPassport}
-                />
+        <CardContainer>
+        {restaurants.map(restaurant =>(
+            <SuggestionCard
+            id={restaurant.id}
+            name={restaurant.name}
+            city={restaurant.city}
+            address={restaurant.address}
+            addToPassport={addToPassport}
+            />
             ))}
-        </CardCont>
+        </CardContainer>
     );
 };
 
 export default SuggestionList;
 
-const CardCont = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+const CardContainer = styled.div`
+    box-sizing: border-box;
+    width: 60%;
+    margin: 20px auto;
+    background-color: #ECE6DC;
+    border-radius: 15px;
+    display: flex;
+    border: 2px solid #8C2C2C;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 `;

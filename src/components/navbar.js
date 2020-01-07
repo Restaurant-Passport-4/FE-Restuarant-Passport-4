@@ -28,42 +28,42 @@ const NavBar = () => {
 
     return(
         <div>
-        <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Foodie Passport</NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
-                <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                Navigation
-                </DropdownToggle>
-                <DropdownMenu right>
-                    <DropdownItem>
-                        <Link to='/profile'> Profile </Link>
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                        <Link to='/dashboard'>Dashboard</Link>
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                        <Link to='/passport'>Passport</Link>
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                        <Link to='/settings'>Settings</Link>
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                    <Button color="danger" onClick={logOut}>Log Out</Button>{' '}
-                    </DropdownItem>
-                </DropdownMenu>
-                </UncontrolledDropdown>
-            </Nav>
-            </Collapse>
-        </Navbar>
+            <Navbar color="light" light expand="md">
+                <NavbarBrand href="/">Foodie Passport</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                <Nav className="mr-auto" navbar>
+                    <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                    Navigation
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                        <DropdownItem>
+                            <Link to='/profile'> Profile </Link>
+                        </DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem>
+                            <Link to='/dashboard'>Dashboard</Link>
+                        </DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem>
+                            <Link to='/passport'>Passport</Link>
+                        </DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem>
+                            <Link to='/settings'>Settings</Link>
+                        </DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem>
+                        <Button color="danger" onClick={logOut}>Log Out</Button>{' '}
+                        </DropdownItem>
+                    </DropdownMenu>
+                    </UncontrolledDropdown>
+                </Nav>
+                </Collapse>
+            </Navbar>
         </div>
-    )
-}
+    );
+};
 
 export default NavBar;

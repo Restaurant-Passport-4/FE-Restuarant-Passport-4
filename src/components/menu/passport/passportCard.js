@@ -5,10 +5,25 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
   } from 'reactstrap';
+import axiosWithAuth from '../../axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 
 const PassportCard = (props) => {
     const { id, name, city, address } = props;
+    const history = useHistory();
+
+    const editPassport = ({id}) => {
+        history.pushState(`editpassport/${id}`)
+    }
+
+    const deletePassport = ({id}) => {
+        axiosWithAuth()
+            .delete(`/passports/${id}`)
+            .then(res => console.log(res))
+            .catch(err => console.log(err)) 
+    }
+
     return (
         <Link to={`/restaurant/${id}`}>
             <Card>
@@ -21,6 +36,8 @@ const PassportCard = (props) => {
                 <CardBody>
                     <CardText>{}</CardText>
                 </CardBody>
+                <button onClick={()=>{editPassport({id})}}>Edit</button>
+                <button onClick={()=>{deletePassport({id})}}>Delete</button>
             </Card>
         </Link>
       

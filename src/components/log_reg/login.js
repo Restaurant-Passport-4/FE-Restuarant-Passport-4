@@ -1,6 +1,7 @@
 import React, { useState, useContext} from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axiosWithAuth from '../../components/axiosWithAuth';
+import styled from 'styled-components';
 import { FoodieContext } from '../../contexts/foodiecontext';
 import { Link } from 'react-router-dom';
 
@@ -27,8 +28,8 @@ const LogIn = props => {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
+        <FormContainer>
+            <H1>Login</H1>
             <Form onSubmit={onSubmit}>
                 <FormGroup>
                     <Label for='username'>Username</Label>
@@ -46,11 +47,32 @@ const LogIn = props => {
                     placeholder='Password'
                     onChange={handleChanges} />
                 </FormGroup>
-                <Button type='submit'>Log In</Button>
-                <Link to='/register'>New User? Sign Up</Link>
+                <BtnContainer>
+                    <Button type='submit'>Log In</Button>
+                    <Link to='/register'>New User? Sign Up</Link>
+                </BtnContainer>
             </Form>
-        </div>
+        </FormContainer>
     )
 }
 
 export default LogIn;
+
+const H1 = styled.h1`
+    text-align: center;
+    margin: 15px;
+`;
+
+const FormContainer = styled.div`
+    width: 60%;
+    margin: 0 auto;
+`;
+
+const BtnContainer = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px auto;
+    text-align: center;
+`;
