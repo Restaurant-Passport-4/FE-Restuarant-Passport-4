@@ -27,7 +27,7 @@ const Register = () => {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('user', JSON.stringify(res.data.username))
                 setUser(JSON.parse(localStorage.getItem('user')))
-                history.push('/')
+                history.push('/dashboard')
             })
             .catch(err => console.error(err))
             }

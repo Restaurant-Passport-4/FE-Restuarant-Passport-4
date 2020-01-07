@@ -40,7 +40,7 @@ const LogIn = props => {
                 </FormGroup>
                 <FormGroup>
                     <Label for='password'>Password</Label>
-                    <Input type='text'
+                    <Input type='password'
                     name='password' 
                     id='password'
                     placeholder='Password'

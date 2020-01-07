@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import styled from 'styled-components';
 import {
     Card, CardImg, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle
+    CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
 const SuggestionCard = (props) => {
-    const { id, name, city, address } = props;
+    const { id, name, city, address, addToPassport } = props;
+
     return (
-        
         <Card>
           <CardBody>
             <CardTitle>{name}</CardTitle>
@@ -16,11 +18,13 @@ const SuggestionCard = (props) => {
           <img width="100%" src="" alt="restaurant picture" />
           <CardBody>
             <CardText>{address}</CardText>
-            <CardLink href="#">Card Link</CardLink>
+            <Link to={`/restaurant/${id}`}>View More</Link>
           </CardBody>
+          <Button color="primary" onclick={addToPassport} >Add to passport</Button>{' '}
         </Card>
       
     );
 };
 
 export default SuggestionCard;
+
