@@ -54,4 +54,9 @@ const CardContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    @media(max-width: 400px){
+        width: 100%;
+        border-radius: 0;
+        
+    }
 `;

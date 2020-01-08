@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import NavBar from '../../navbar.js';
 import axiosWithAuth from '../../axiosWithAuth';
 
 const NewRestaurantForm = () => {
@@ -33,6 +34,7 @@ const NewRestaurantForm = () => {
     
     return(
         <div>
+            <NavBar />
             <h1>Add A New Restaurant</h1>
             <Form>
                 <FormGroup onSubmit={submitEffect}>

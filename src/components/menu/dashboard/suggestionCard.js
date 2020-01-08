@@ -1,10 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import {
-    Card, CardImg, CardText, CardBody, CardLink,
-    CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
 
 const SuggestionCard = (props) => {
     const { id, name, city, address, addToPassport } = props;
@@ -16,34 +12,47 @@ const SuggestionCard = (props) => {
           <CardH4>{address}</CardH4>
           <img width="100%" src="" alt="restaurant picture" />
           <ButtonCont>
-            <Link to={`/restaurant/${id}`}><Button color="primary" size="lg">View More</Button></Link>
-            <Button color="primary" size="lg" onclick={addToPassport}>Add to passport</Button>
+            <Link to={`/restaurant/${id}`}><ButtonLink>View More Details</ButtonLink></Link>
+            <ButtonStyled onClick={addToPassport}>Add to passport</ButtonStyled>
           </ButtonCont>
         </CardStyled>
-      
     );
 };
 
 export default SuggestionCard;
 
+const ButtonLink = styled.button`
+  width: 100%;
+  border-radius: 15px;
+  color: white;
+  background-color: #8C2C2C;
+  height: 60px;
+  border: 3px solid #F6EFE5
+  &:hover{
+    background-color: #F6EFE5;
+    border: 3px solid #8C2C2C;
+    color: #8C2C2C;
+    }
+`;
 const ButtonCont = styled.div`
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin: 25px auto;
 `;
-// const ButtonStyled = styled.button`
-//   width: 30%;
-//   border-radius: 15px;
-//   color: white;
-//   background-color: #8C2C2C;
-//   height: 40px;
-//   border: 3px solid #F6EFE5
-//   &:hover{
-//    background-color: #F6EFE5;
-//    border: 3px solid #8C2C2C;
-//    }
-// `;
+const ButtonStyled = styled.button`
+  width: 40%;
+  border-radius: 15px;
+  color: white;
+  background-color: #8C2C2C;
+  height: 60px;
+  border: 3px solid #F6EFE5
+  &:hover{
+   background-color: #F6EFE5;
+   border: 3px solid #8C2C2C;
+   color: #8C2C2C;
+   }
+`;
 const CardStyled = styled.div`
   width: 46%;
   background-color: #ECE6DC;
@@ -52,6 +61,7 @@ const CardStyled = styled.div`
   margin: 20px 2%;
   @media(max-width: 400px) {
     width: 85%;
+    margin: 10px 1.5% 0 1.5%;
   }
 `;
 const CardH2 = styled.h2`

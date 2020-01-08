@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from '../../../navbar';
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
@@ -9,6 +10,7 @@ const Restaurant = (props) => {
 
     return (
         <div>
+          <NavBar />
           <Card>
             <CardImg top width="100%" src="" alt="restaurant photo" />
             <CardBody>
