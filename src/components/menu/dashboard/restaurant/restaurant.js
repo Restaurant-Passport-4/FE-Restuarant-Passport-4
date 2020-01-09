@@ -1,10 +1,6 @@
 import React from 'react';
 import NavBar from '../../../navbar';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
-  import styled from 'styled-components';
+import styled from 'styled-components';
 
 const Restaurant = (props) => {
     const{ id, name, city, address, addToPassport } = props;
@@ -27,23 +23,6 @@ const Restaurant = (props) => {
 
 export default Restaurant
 
-const Background = styled.div`
-    background-color: #ECE6DC;
-    height: 100vh;
-`;
-const ButtonLink = styled.button`
-  width: 100%;
-  border-radius: 15px;
-  color: white;
-  background-color: #8C2C2C;
-  height: 60px;
-  border: 3px solid #F6EFE5
-  &:hover{
-    background-color: #F6EFE5;
-    border: 3px solid #8C2C2C;
-    color: #8C2C2C;
-    }
-`;
 const ButtonCont = styled.div`
   width: 100%;
   display: flex;
