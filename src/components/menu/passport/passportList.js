@@ -46,6 +46,7 @@ const PassCardCont = styled.div`
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap
-    width: 80%
+    width: 90%
     margin: 0 auto;
+    
 `

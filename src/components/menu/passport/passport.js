@@ -21,7 +21,7 @@ export default Passport
 
 const Background = styled.div`
     background-color: #ECE6DC;
-    height: 100vh;
+    min-height: 100vh;
 `;
 const H1 = styled.h1`
     text-align: center;

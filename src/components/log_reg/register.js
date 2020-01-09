@@ -67,7 +67,6 @@ const Register = () => {
             </FormContainer>
         </Background>
     )
-
 }
 
 export default Register;

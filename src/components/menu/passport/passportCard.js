@@ -25,18 +25,20 @@ const PassportCard = (props) => {
     }
 
     return (
-        <Link to={`/restaurant/${id}`}>
+        
             <CardStyled>
                 <CardH2>{name}</CardH2>
                 <CardH4>{city}</CardH4>
                 <CardH4>{address}</CardH4>
-                <img width="100%" src="" alt="restaurant picture" />
+                <Link to={`/restaurant/${id}`}>
+                  <img width="100%" src="" alt="restaurant picture" />
+                </Link>
                 <ButtonCont>
                     <ButtonStyled onClick={()=>{editPassport({id})}}>Edit</ButtonStyled>
                     <ButtonStyled onClick={()=>{deletePassport({id})}}>Delete</ButtonStyled>
                 </ButtonCont>
             </CardStyled>
-        </Link>
+        
       
     );
 };

@@ -4,20 +4,22 @@ import styled from 'styled-components';
 
 const Restaurant = (props) => {
     const{ id, name, city, address, addToPassport } = props;
-
+    
     return (
-        <div>
+        <Background>
           <NavBar />
-          <CardStyled>
-            <img width="100%" src="" alt="restaurant picture" />
-            <CardH2>{name}</CardH2>
-            <CardH4>{city}</CardH4>
-            <CardH4>{address}</CardH4>
-            <ButtonCont>
-              <ButtonStyled onClick={addToPassport}>Add to passport</ButtonStyled>
-            </ButtonCont>
-           </CardStyled>
-        </div>
+          <CardCont>
+            <CardStyled>
+              <img width="100%" src="" alt="restaurant picture" />
+              <CardH2>{name}</CardH2>
+              <CardH4>{city}</CardH4>
+              <CardH4>{address}</CardH4>
+              <ButtonCont>
+                <ButtonStyled onClick={addToPassport}>Add to passport</ButtonStyled>
+              </ButtonCont>
+            </CardStyled>
+           </CardCont>
+        </Background>
       );
 };
 
@@ -60,4 +62,14 @@ const CardH2 = styled.h2`
 const CardH4 = styled.h4`
   text-align: center;
 `;
-
+const Background = styled.div`
+    background-color: #ECE6DC;
+    height: 100vh;
+`;
+const CardCont = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap
+    width: 95%
+    margin: 0 auto;
+`

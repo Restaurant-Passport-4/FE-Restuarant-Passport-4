@@ -35,42 +35,45 @@ const NewRestaurantForm = () => {
 
     
     return(
-        <div>
-            <h1>Add A New Restaurant</h1>
-            <Form>
-                <FormGroup>
-                    <Label for='name'>Restuarant Name</Label>
-                    <Input type='text'
-                        name='name'
-                        id='name'
-                        placeholder='Restuarant Name'
-                        onChange={changeHandler}/>
-                </FormGroup>
-                <FormGroup>
-                    <Label for='address'>Street Address</Label>
-                    <Input type='text'
-                        name='address'
-                        id='address'
-                        placeholder='Street Address'
-                        onChange={changeHandler}/>
-                </FormGroup>
-                    <Label for='city'>City</Label>
-                    <Input type='text'
-                        name='city'
-                        id='city'
-                        placeholder='City'
-                        onChange={changeHandler}/>
-                <FormGroup>
-                    <Label for='description'>description</Label>
-                    <Input type='text'
-                        name='description'
-                        id='description'
-                        placeholder='Description'
-                        onChange={changeHandler}/>
-                </FormGroup>
-                <Button onClick={submitEffect}>Submit</Button>
-            </Form>
-        </div>
+        <Background>
+            <NavBar />
+            <H1>Add A New Restaurant</H1>
+            <FormContainer>
+                <Form>
+                    <FormGroup>
+                        <Label for='name'>Restuarant Name</Label>
+                        <Input type='text'
+                            name='name'
+                            id='name'
+                            placeholder='Restuarant Name'
+                            onChange={changeHandler}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='address'>Street Address</Label>
+                        <Input type='text'
+                            name='address'
+                            id='address'
+                            placeholder='Street Address'
+                            onChange={changeHandler}/>
+                    </FormGroup>
+                        <Label for='city'>City</Label>
+                        <Input type='text'
+                            name='city'
+                            id='city'
+                            placeholder='City'
+                            onChange={changeHandler}/>
+                    <FormGroup>
+                        <Label for='description'>description</Label>
+                        <Input type='text'
+                            name='description'
+                            id='description'
+                            placeholder='Description'
+                            onChange={changeHandler}/>
+                    </FormGroup>
+                    <Button onClick={submitEffect}>Submit</Button>
+                </Form>
+            </FormContainer>
+        </Background>
     );
 };
 
@@ -78,6 +81,7 @@ export default NewRestaurantForm;
 
 const Background = styled.div`
     background-color: #ECE6DC;
+    min-height: 100vh;
 `;
 const FormContainer = styled.div`
     width: 60%;

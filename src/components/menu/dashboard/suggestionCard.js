@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const SuggestionCard = (props) => {
-    const { id, name, city, address, addToPassport } = props;
+    const { id, name, city, address, addToPassport, imgArry } = props;
 
     return (
         <CardStyled>
           <CardH2>{name}</CardH2>
           <CardH4>{city}</CardH4>
           <CardH4>{address}</CardH4>
-          <img width="100%" src="" alt="restaurant picture" />
+            {imgArry.length > 0 ? (
+              <Img width="100%" src={imgArry[id].urls.thumb} alt="restaurant picture" />
+            ) : null}
           <ButtonCont>
             <Link to={`/restaurant/${id}`}>
             <ButtonLink>View More Details</ButtonLink></Link>
@@ -22,6 +24,10 @@ const SuggestionCard = (props) => {
 
 export default SuggestionCard;
 
+const Img = styled.img`
+  max-height: 15vh;
+  max-width: 100%;
+`;
 const ButtonLink = styled.button`
   width: 100%;
   border-radius: 15px;

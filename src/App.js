@@ -23,9 +23,11 @@ function App() {
   const [profile, setProfile] = useState(null);
   const [restaurants, setRestaurants] = useState([]);
   const [passport, setPassport] = useState([]);
+
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem('user')))
   },[])
+
   return (
     <main>
       <FoodieContext.Provider value = {{loggedIn, setLoggedIn, user, setUser, profile, setProfile, restaurants, setRestaurants, passport, setPassport}}>

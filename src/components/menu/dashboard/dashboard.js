@@ -1,12 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { FoodieContext } from '../../../contexts/foodiecontext';
 import styled from 'styled-components';
 import NavBar from '../../navbar.js';
 import SuggestionList from './suggestionList';
+import Axios from 'axios';
 
 
 const Dashboard = () => {
     const { user } = useContext(FoodieContext);
+    const [imgArry, setImgArry] = useState([])
+
+    useEffect(() => {
+        Axios
+          .get('https://api.unsplash.com/photos/random?query=restaurant&count=30&client_id=13a19d8fa399e3637a904808fb4a6117734f8b057811badb42583dfa4c60e3fb')
+          .then(res => {
+            console.log('this is the unsplash api', res)
+            setImgArry(res.data);
+          })
+          .catch(err => {
+            console.log('did not recieve data from unsplashed', err)
+          })
+      },[]);
     
     return(
         <Background>
@@ -14,10 +28,9 @@ const Dashboard = () => {
          <H1>Hello {user.name}</H1>
          <H2>Here are some suggested restaurants:</H2>
          <div>
-            <SuggestionList />
+            <SuggestionList imgArry={imgArry}/>
          </div>
         </Background>
-
     );
 };
 
