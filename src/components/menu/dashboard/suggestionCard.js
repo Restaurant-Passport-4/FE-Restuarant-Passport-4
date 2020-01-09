@@ -12,7 +12,8 @@ const SuggestionCard = (props) => {
           <CardH4>{address}</CardH4>
           <img width="100%" src="" alt="restaurant picture" />
           <ButtonCont>
-            <Link to={`/restaurant/${id}`}><ButtonLink>View More Details</ButtonLink></Link>
+            <Link to={`/restaurant/${id}`}>
+            <ButtonLink>View More Details</ButtonLink></Link>
             <ButtonStyled onClick={addToPassport}>Add to passport</ButtonStyled>
           </ButtonCont>
         </CardStyled>
@@ -55,7 +56,7 @@ const ButtonStyled = styled.button`
 `;
 const CardStyled = styled.div`
   width: 46%;
-  background-color: #ECE6DC;
+  background-color: #E5E5E5;
   border: 2px solid #8C2C2C;
   border-radius: 15px;
   margin: 20px 2%;

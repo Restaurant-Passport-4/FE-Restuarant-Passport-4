@@ -7,13 +7,17 @@ const AddRestaurant = () => {
     
 
     return(
-        <div>
+        <Background>
             <Link to='/newRestaurant'>
                 <Button outline color="secondary">Add a New Restaurant</Button>{' '}
             </Link>
-        </div>
+        </Background>
     );
 };
 
 export default AddRestaurant;
+
+const Background = styled.div`
+    background-color: #ECE6DC;
+`;
 

@@ -15,6 +15,7 @@ import Settings from './components/menu/settings';
 import NewRestaurantForm from './components/menu/passport/newRestaurantForm';
 import Restaurant from './components/menu/dashboard/restaurant/restaurant';
 import EditPassport from './components/menu/passport/editPassport';
+import EditProfile from './components/menu/profile/editProfile';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token')? true: false);
@@ -38,6 +39,7 @@ function App() {
           <Route path = "/newRestaurant" component = {NewRestaurantForm} />
           <Route path = "/restaurant/:ID" component = {Restaurant} />
           <Route path = "/editpassport" component = {EditPassport} />
+          <Route path = "/editProfile" component = {EditProfile} />
         </Switch>
       </FoodieContext.Provider>
     </main>

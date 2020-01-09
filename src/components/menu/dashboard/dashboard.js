@@ -23,18 +23,7 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-// const CardContainer = styled.div`
-//     box-sizing: border-box;
-//     width: 60%;
-//     margin: 20px auto;
-//     background-color: #ECE6DC;
-//     border-radius: 15px;
-//     display: flex;
-//     border: 2px solid red;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-// `;
+
 const Background = styled.div`
     background-color: #ECE6DC;
 `;
@@ -46,5 +35,8 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
     text-align: center;
-    margin: 15px;
+    margin: 15px 0;
+    padding: 25px 0;
+    background-color: #8C2C2C;
+    color: #F6EFE5;
 `;

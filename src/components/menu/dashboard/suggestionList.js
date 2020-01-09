@@ -57,6 +57,8 @@ const CardContainer = styled.div`
     @media(max-width: 400px){
         width: 100%;
         border-radius: 0;
+        border: none;
+        
         
     }
 `;
