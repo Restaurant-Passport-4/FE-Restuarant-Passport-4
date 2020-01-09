@@ -19,12 +19,13 @@ const LogIn = props => {
             .post('/api/auth/login', userInput)
             .then(res => {
                 console.log(res)
-                console.log(user)
                 localStorage.setItem('token', res.data.token)
-                localStorage.setItem('user', JSON.stringify(res.data))
+                localStorage.setItem('user', JSON.stringify(res.data.user))
                 setUser(JSON.parse(localStorage.getItem('user')))
+                console.log(user)
                 props.history.push('/dashboard')
             })
+            .catch(err => console.log(err))
     }
 
     return (
