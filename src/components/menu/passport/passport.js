@@ -10,7 +10,6 @@ const Passport = () => {
         <>
         <NavBar />
         <h1>Your Passport</h1>
-        <Link to ="/newRestaurant" >Add new restaurant</Link>
         <PassportList />
         </>
     );

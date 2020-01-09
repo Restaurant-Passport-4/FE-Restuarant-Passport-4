@@ -6,13 +6,18 @@ import axiosWithAuth from '../../../components/axiosWithAuth';
 import styled from 'styled-components';
 
 const PassportList = () => {
+    const {user} = useContext(FoodieContext);
     const {passport, setPassport} = useContext(FoodieContext);
 
     useEffect(() => {
         const getPassport = () => {
             axiosWithAuth()
-                .get('/user/:userid/passport')
-                .then(res => setPassport(res.data))
+                .get(`/api/passport/${user.id}`)
+                .then(res => {
+                    console.log(user)
+                    console.log(res)
+                    setPassport(res.data.passport)
+                })
                 .catch(err => console.log(err))
         }
         getPassport();
