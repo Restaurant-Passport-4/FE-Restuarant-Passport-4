@@ -36,8 +36,8 @@ const PassportCard = (props) => {
                 <CardBody>
                     <CardText>{}</CardText>
                 </CardBody>
-                <button onClick={()=>{editPassport({id})}}>Edit</button>
-                <button onClick={()=>{deletePassport({id})}}>Delete</button>
+                {/* <button onClick={()=>{editPassport({id})}}>Edit</button>
+                <button onClick={()=>{deletePassport({id})}}>Delete</button> */}
             </Card>
         </Link>
       

@@ -11,7 +11,7 @@ const Dashboard = () => {
     return(
         <Background>
          <NavBar />
-         <H1>{user.message}</H1>
+         <H1>Hello {user.name}</H1>
          <H2>Here are some suggested restaurants:</H2>
          <div>
             <SuggestionList />
