@@ -29,7 +29,7 @@ const NavBar = () => {
     return(
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Foodie Passport</NavbarBrand>
+                <NavbarBrand href="https://ui-restaurant-passport.netlify.com/">Foodie Passport</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
