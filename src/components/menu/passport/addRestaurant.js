@@ -7,13 +7,29 @@ const AddRestaurant = () => {
     
 
     return(
-        <div>
-            <Link to='/newRestaurant'>
-                <Button outline color="secondary">Add a New Restaurant</Button>{' '}
-            </Link>
-        </div>
+        <Background>
+            <ButtonCont>
+                <LinkStyled to='/newRestaurant'>
+                    <Button color="secondary">Add a New Restaurant</Button>{' '}
+                </LinkStyled>
+            </ButtonCont>
+        </Background>
     );
 };
 
 export default AddRestaurant;
 
+const Background = styled.div`
+    background-color: #ECE6DC;
+`;
+
+const LinkStyled = styled(Link)`
+    text-align: center;
+`;
+
+const ButtonCont = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px auto;
+`;

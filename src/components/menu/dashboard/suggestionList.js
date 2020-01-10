@@ -5,7 +5,7 @@ import { FoodieContext } from '../../../contexts/foodiecontext';
 import axiosWithAuth from '../../../components/axiosWithAuth';
 import { Spinner, Container, Row, Col } from 'reactstrap';
 
-const SuggestionList = () => {
+const SuggestionList = ({imgArry}) => {
     const {restaurants, setRestaurants} = useContext(FoodieContext);
     const {passport, setPassport} = useContext(FoodieContext);
 
@@ -24,7 +24,7 @@ const SuggestionList = () => {
                 .catch(err => console.log(err))
         }
         getRestaurants();
-    }, [])
+    }, []);
 
     return(
         <CardContainer>
@@ -35,6 +35,7 @@ const SuggestionList = () => {
             city={restaurant.city}
             address={restaurant.address}
             addToPassport={addToPassport}
+            imgArry={imgArry}
             />
             ))}
         </CardContainer>
@@ -54,4 +55,11 @@ const CardContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    @media(max-width: 400px){
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        
+        
+    }
 `;

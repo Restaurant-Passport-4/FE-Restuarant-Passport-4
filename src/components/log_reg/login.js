@@ -29,35 +29,45 @@ const LogIn = props => {
     }
 
     return (
-        <FormContainer>
-            <H1>Login</H1>
-            <Form onSubmit={onSubmit}>
-                <FormGroup>
-                    <Label for='username'>Username</Label>
-                    <Input type='text' 
-                    name='username' 
-                    id='username' 
-                    placeholder='Username'
-                    onChange={handleChanges} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for='password'>Password</Label>
-                    <Input type='password'
-                    name='password' 
-                    id='password'
-                    placeholder='Password'
-                    onChange={handleChanges} />
-                </FormGroup>
-                <BtnContainer>
-                    <Button type='submit'>Log In</Button>
-                    <Link to='/register'>New User? Sign Up</Link>
-                </BtnContainer>
-            </Form>
-        </FormContainer>
+        <Background>
+            <Img src={require('./imgs/foodiePassportLogo.PNG')} alt='foodie passport logo' />
+            <FormContainer>
+                <H1>Login</H1>
+                <Form onSubmit={onSubmit}>
+                    <FormGroup>
+                        <Label for='username'>Username</Label>
+                        <Input type='text' 
+                        name='username' 
+                        id='username' 
+                        placeholder='Username'
+                        onChange={handleChanges} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for='password'>Password</Label>
+                        <Input type='password'
+                        name='password' 
+                        id='password'
+                        placeholder='Password'
+                        onChange={handleChanges} />
+                    </FormGroup>
+                    <BtnContainer>
+                        <Button type='submit'>Log In</Button>
+                    </BtnContainer>
+                    <BtnContainer>
+                        <Link to='/register'>New User? <br /> Sign Up</Link>
+                    </BtnContainer>
+                </Form>
+            </FormContainer>
+        </Background>
     )
 }
 
 export default LogIn;
+
+const Background = styled.div`
+    background-color: #ECE6DC;
+    padding: 25px 0;
+`;
 
 const H1 = styled.h1`
     text-align: center;
@@ -74,6 +84,13 @@ const BtnContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10px auto;
+    margin: 15px auto;
     text-align: center;
+`;
+
+const Img = styled.img`
+    margin: 10px auto;
+    width: 80%;
+    max-width: 500px;
+    display: block;
 `;

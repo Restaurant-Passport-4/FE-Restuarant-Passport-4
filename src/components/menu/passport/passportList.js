@@ -45,6 +45,8 @@ export default PassportList;
 const PassCardCont = styled.div`
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column;
-    flex-wrap:wrap
+    flex-wrap: wrap
+    width: 90%
+    margin: 0 auto;
+    
 `

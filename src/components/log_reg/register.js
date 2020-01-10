@@ -35,38 +35,38 @@ const Register = () => {
         }
 
     return (
-        <FormContainer>
-            <H1>Register your new account:</H1>
-            <Form onSubmit={onSubmit}>
-                <FormGroup>
-                    <Label for="username">Username</Label>
-                    <Input type="text" name="username" id="username" placeholder="Username" onChange={handleChanges} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="password">Password</Label>
-                    <Input type="password" name="password" id="password" placeholder="Password" onChange={handleChanges} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="name">Name</Label>
-                    <Input type="text" name="name" id="name" placeholder="Name" onChange={handleChanges} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="email">Email</Label>
-                    <Input type="text" name="email" id="email" placeholder="Email" onChange={handleChanges} />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="city">City</Label>
-                    <Input type="text" name="city" id="city" placeholder="City" onChange={handleChanges} />
-                </FormGroup>
-                <BtnContainer>
-                    <Button type="submit">Sign Up</Button>
-                    <Link to ='/'>Returning User? Sign in</Link>
-                </BtnContainer>
-            </Form>
-            
-        </FormContainer>
+        <Background>
+            <FormContainer>
+                <H1>Register your new account:</H1>
+                <Form onSubmit={onSubmit}>
+                    <FormGroup>
+                        <Label for="username">Username</Label>
+                        <Input type="text" name="username" id="username" placeholder="Username" onChange={handleChanges} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="password">Password</Label>
+                        <Input type="password" name="password" id="password" placeholder="Password" onChange={handleChanges} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="name">Name</Label>
+                        <Input type="text" name="name" id="name" placeholder="Name" onChange={handleChanges} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="email">Email</Label>
+                        <Input type="text" name="email" id="email" placeholder="Email" onChange={handleChanges} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="city">City</Label>
+                        <Input type="text" name="city" id="city" placeholder="City" onChange={handleChanges} />
+                    </FormGroup>
+                    <BtnContainer>
+                        <Button type="submit">Sign Up</Button>
+                        <Link to ='/'>Returning User? Sign in</Link>
+                    </BtnContainer>
+                </Form>
+            </FormContainer>
+        </Background>
     )
-
 }
 
 export default Register;
@@ -88,4 +88,8 @@ const BtnContainer = styled.div`
     justify-content: center;
     margin: 20px auto;
     text-align: center;
+`;
+const Background = styled.div`
+    background-color: #ECE6DC;
+    padding: 25px 0;
 `;
